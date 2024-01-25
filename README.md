@@ -3,7 +3,10 @@
   <h1 align="center">SVG Logo Generator</h1>
 
   ## Description
-
+  This Node.js command-line application takes prompted user input: color, shape and text, in order to generate a logo, which is then saved as an SVG file. 
+  <br>
+  This project is centered around Object-Oriented Programming and further familiarisation with node.js and the dependencies Inquirer and Jest.
+  
   ![Badge](https://img.shields.io/badge/License-MIT-yellow.svg)
  
 
@@ -19,10 +22,14 @@
 
   ## Installation
   `node index.js`: to invoke the application
+  <br>
   `npm init -y`: create a package.json file
+  <br>
   `npm install`: install dependencies
 
+  ### Dependencies
   `npm i jest`: running unit tests
+  <br>
   `npm i inquirer@8.2.4`: collecting input from user
   
   ## User Story
