@@ -18,10 +18,13 @@
   - [Questions](#questions)
 
   ## Installation
-  #### Command to install dependencies:
-  `
-  node i inquirer@8.2.4
-  `
+  `node index.js`: to invoke the application
+  `npm init -y`: create a package.json file
+  `npm install`: install dependencies
+
+  `npm i jest`: running unit tests
+  `npm i inquirer@8.2.4`: collecting input from user
+  
   ## User Story
   ```
 AS a freelance web developer
