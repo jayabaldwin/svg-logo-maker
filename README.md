@@ -3,9 +3,11 @@
   <h1 align="center">SVG Logo Generator</h1>
 
   ## Description
-  This Node.js command-line application takes prompted user input: color, shape and text, in order to generate a logo, which is then saved as an SVG file. 
+  This Node.js command-line application takes user input in order to generate a logo, which is then saved as an SVG file. 
   <br>
   This project is centered around Object-Oriented Programming and further familiarisation with node.js and the dependencies Inquirer and Jest.
+  <br>
+  Inquirer is utilised to prompt the user within the command line on their logo specification: a triangle, circle or square logo, the fill color and up to 3 characters for the text and on completion an SVG logo will be generated. Jest........ 
   
   ![Badge](https://img.shields.io/badge/License-MIT-yellow.svg)
  
@@ -14,6 +16,7 @@
   - [Installation](#installation)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
+  - [Examples](#examples)
   - [Usage](#usage)
   - [License](#license)
   - [Contributing](#contributing)
@@ -34,13 +37,14 @@
   
   ## User Story
   ```
-AS a freelance web developer
+  AS a freelance web developer
 I WANT to generate a simple logo for my projects
 SO THAT I don't have to pay a graphic designer
   ```
 
+
   ## Acceptance Criteria
-  ```
+```
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for text
 THEN I can enter up to three characters
@@ -55,14 +59,18 @@ THEN an SVG file is created named `logo.svg`
 AND the output text "Generated logo.svg" is printed in the command line
 WHEN I open the `logo.svg` file in a browser
 THEN I am shown a 300x200 pixel image that matches the criteria I entered
-  ```
+ ```
+
+  ## Examples
+  ### Recording
+
+  ### Screenshots
 
   ## Usage
   Run this application with the command:
   `
   `
-
-  The functionality is as follows:
+<!-- not sure what to put in here -->
   
 
   ## License
@@ -79,8 +87,6 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
   `
 
   ## Questions
-  Questions about this repository? My best point of contact is via Email 
+  Questions about this repository? My best point of contact is via [Email](mailto:jayastarrbaldwin@gmail.com) 
   <br>
   If you'd like to view more of my work in GitHub, my profile is: [jayabaldwin](https://github.com/jayabaldwin) 
-  <br>
-  Otherwise my email is [jayastarrbaldwin@gmail.com](mailto:jayastarrbaldwin@gmail.com).
