@@ -2,9 +2,9 @@
 const inquirer = require('inquirer');
 const jest = require('jest')
 const fs = require('fs');
-const shapes = require('../lib/shapes.js');
-const userInput = require('../lib/user-input.js');
-const writeFile = require('../lib/write-file.js');
+const shapes = require('./lib/shapes.js');
+const userInput = require('./lib/user-input.js');
+const writeFile = require('./lib/write-file.js');
 
 
 
