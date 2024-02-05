@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const writeToFile = require('./write-file.js');
+const { Triangle, Circle, Square } = require('./shapes.js');
 
 // Inquirer prompts
 const questions = [
@@ -60,12 +61,19 @@ const questions = [
     }
 ];
 
-function init() {
-    inquirer.prompt(questions)
-        .then((answers) => {
-            writeToFile('logo.svg'.answers);
-        })
-        .catch((err) => console.error(err));
-}
+function shapeChoice() {
+    switch (data.shape.toLowerCase()) {
+        case 'triangle':
+            return new Triangle(data.text, data.color, data.background);
+        
+        case 'circle':
+            return new Circle(data.text, data.color, data.background);
 
+        case 'square':
+            return new Square(data.text, data.color, data.background);
 
+        default:
+            console.log('Invalid selection, please try again');
+            return null;
+    }
+};

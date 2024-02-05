@@ -30,8 +30,8 @@ class Circle extends Shape {
 
     render(text, color, background) {
         return `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="150" r="50" fill="${this.background}"/><text y="150" x="150" alignment-baseline="middle" fill="${this.color}" text-anchor="middle" font-size="30">${this.text}</text></svg>`
-    }
-}
+    };
+};
 
 
 class Square extends Shape {
@@ -41,7 +41,7 @@ class Square extends Shape {
 
     render(text, color, background) {
         return `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" height="200" width="300" fill="${this.background}"/><text y="100" x="150" alignment-baseline="middle" fill="${this.color}" text-anchor="middle" font-size="30">${this.text}</text></svg>`
-    }
-}
+    };
+};
 
 module.exports = { Triangle, Circle, Square }
