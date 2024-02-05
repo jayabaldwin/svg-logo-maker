@@ -5,6 +5,8 @@
   ## Description
   This Node.js command-line application takes user input in order to generate a logo, which is then saved as an SVG file. 
   <br>
+
+  ![](./screenshots/logo-generator.gif)
   
   This project is centered around Object-Oriented Programming and further familiarisation with node.js and the dependencies Inquirer and Jest.
   <br>
@@ -22,7 +24,7 @@
   - [Installation](#installation)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
-  - [Examples](#examples)
+  - [Example](#example)
   - [Usage](#usage)
   - [License](#license)
   - [Contributing](#contributing)
@@ -68,17 +70,13 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
  ```
 
   ## Examples
-  ### Recording
-
-  ### Screenshots
+  ### Screenshot
+  ![Example SVG Logo](./screenshots/logo.png)
 
   ## Usage
   Run this application with the command:
   ` node index.js
   `
-<!-- not sure what to put in here -->
-  
-
   ## License
   The application is covered under the following license: [MIT](https://opensource.org/licenses/MIT)
 
@@ -88,7 +86,7 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
   
 
   ## Tests
-  #### To run tests use the following command:
+  #### To run tests using jest.js use the following command:
   `
   npm run test
   `
