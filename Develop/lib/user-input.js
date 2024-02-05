@@ -1,5 +1,3 @@
-const inquirer = require('inquirer');
-
 // Inquirer prompts
 const questions = [
     {
