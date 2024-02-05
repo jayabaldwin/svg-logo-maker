@@ -1,5 +1,5 @@
 // Jest tests for shapes - Triangle, Circle, Square
-const { Triangle, Circle, Square } = require("./shapes.js");
+const { Triangle, Circle, Square } = require("../lib/shapes.js");
 
 // Testing suites for all 3 shapes 
 describe('Shapes', () => {
