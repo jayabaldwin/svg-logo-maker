@@ -1,29 +1,61 @@
-// Jest tests for questions relating to selecting a color
-const { LogoGenerator } = require('../lib/write-file.js');
+// Jest tests for questions text input
+const LogoGenerator = require('../lib/write-file.js');
 const { Triangle, Circle, Square } = require('../lib/shapes.js');
 
+jest.mock('fs');
 
-// Testing suite for questions 
-describe('Questions', () => {
+describe('LogoGenerator', () => {
+    let logoGenerator;
 
-    // Unit testing: triangle
-    describe('Colors', () => {
-        test("When the color purple is applied to the 'text' input, the text color will be purple ", () => {
-            const colorChoice = new LogoGenerator(color = 'purple');
-            expect(color).toEqual('purple');
-        });
+    beforeEach(() => {
+        logoGenerator = new LogoGenerator;
     });
 
+    test('Should create purple text when data.text is "purple" for Circle', () => {
+        const data = {
+            text: 'abc',
+            shape: 'Triangle',
+            color: 'purple',
+            background: 'black'
+        };
 
-    // Unit testing: circle
-    describe('Circle', () => {
-        test("A cicle that is green and has the letters XYZ in the center written in black", () => {
-            const circle = new Circle(
-                'XYZ',
-                '#000000',
-                'green');
-            expect(circle.render()).toBe(`<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="100" r="100" fill="green"/><text y="100" x="150" alignment-baseline="middle" fill="#000000" text-anchor="middle" font-size="70">XYZ</text></svg>`
-            );
-        });
+        const result = logoGenerator.generateLogo(data);
+
+        expect(result).toBeInstanceOf(Triangle);
+        expect(result.text).toBe('ABC');
+        expect(result.color).toBe('purple');
+        expect(result.background).toBe('black');
+    });
+
+    test('The background/text color will generate with both color names and hexidecimal code', () => {
+        const data = {
+            text: 'abc',
+            shape: 'Circle',
+            color: 'red',
+            background: '#19C37D'
+        };
+
+        const result = logoGenerator.generateLogo(data);
+
+        expect(result).toBeInstanceOf(Circle);
+        expect(result.text).toBe('ABC');
+        expect(result.color).toBe('red');
+        expect(result.background).toBe('#19C37D');
+    });
+
+    test('Regardless of case input, text will be rendered capitalised', () => {
+        const data = {
+            text: 'aBc',
+            shape: 'Square',
+            color: 'yellow',
+            background: 'pink'
+        };
+
+        const result = logoGenerator.generateLogo(data);
+
+        expect(result).toBeInstanceOf(Square);
+        expect(result.text).toBe('ABC');
+        expect(result.color).toBe('yellow');
+        expect(result.background).toBe('pink');
     });
 });
