@@ -1,8 +1,4 @@
 const inquirer = require('inquirer');
-const Triangle = require('./triangle.js');
-const Circle = require('./circle.js');
-const Square = require('./square.js');
-const fs = require('fs');
 
 // Inquirer prompts
 const questions = [
@@ -10,6 +6,12 @@ const questions = [
         type: 'input',
         name: 'text',
         message: 'Enter the text you would like to include on your logo (Max: 3 characters)',
+        validate: function (input) {
+            if (input.length > 3 || input.length <=0){
+                return "Please enter between 1-3 characters for your logo text";
+            }
+            return true;
+        }
     },
     {
         type: 'input',
@@ -28,5 +30,3 @@ const questions = [
         message: 'Enter background color (Color keywork or hexidecimal code)?',
     }
 ];
-
-module.exports = Questions;
