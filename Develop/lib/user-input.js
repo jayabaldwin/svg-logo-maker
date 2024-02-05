@@ -1,7 +1,3 @@
-const inquirer = require('inquirer');
-const writeToFile = require('./write-file.js');
-const { Triangle, Circle, Square } = require('./shapes.js');
-
 // Inquirer prompts
 const questions = [
     {
@@ -17,63 +13,47 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'textColor',
+        name: 'color',
         message: 'Enter text color (Color keywork or hexidecimal code)',
-        validate: function (textColor) {
-            // Check if it's a valid CSS color keyword
-            if (CSS.supports('color', textColor)) {
-                return true;
-            }
+        // validate: function (color) {
+        //     // Check if it's a valid CSS color keyword
+        //     // if (CSS.supports('color', color)) {
+        //     //     return true;
+        //     // }
 
-            // Check if it's a valid hexadecimal code
-            const colorRegExp = '/^#([0-9a-fA-F]{3}){1,2}$/';
-            if (!colorRegExp.test(textColor)) {
-                return 'Please enter a valid color keyword or hexadecimal code';
-            }
+        //     // Check if it's a valid hexadecimal code
+        //     const colorRegExp = '/^#([0-9a-fA-F]{3}){1,2}$/';
+        //     if (colorRegExp.test(color)) {
+        //         return 'Please enter a valid color keyword or hexadecimal code';
+        //     }
 
-            return true;
-        }
+        //     return true;
+        // }
+    },
+    {
+        type: 'input',
+        name: 'background',
+        message: 'Enter background color (Color keywork or hexidecimal code)?',
+        // validate: function (background) {
+        //     // Check if it's a valid CSS color keyword
+        //     // if (CSS.supports('color', background)) {
+        //     //     return true;
+        //     // }
+
+        //     // Check if it's a valid hexadecimal code
+        //     const colorRegExp = '/^#([0-9a-fA-F]{3}){1,2}$/';
+        //     if (!colorRegExp.test(background)) {
+        //         return 'Please enter a valid color keyword or hexadecimal code';
+        //     }
+        //     return true;
+        // }
     },
     {
         type: 'list',
         name: 'shape',
         message: 'Select logo shape from the following 3 options',
-        choices: ['Triangle, Circle, Square'],
+        choices: ['Triangle', 'Circle', 'Square']
     },
-    {
-        type: 'input',
-        name: 'fillColor',
-        message: 'Enter background color (Color keywork or hexidecimal code)?',
-        validate: function (fillColor) {
-            // Check if it's a valid CSS color keyword
-            if (CSS.supports('color', fillColor)) {
-                return true;
-            }
-
-            // Check if it's a valid hexadecimal code
-            const colorRegExp = '/^#([0-9a-fA-F]{3}){1,2}$/';
-            if (!colorRegExp.test(fillColor)) {
-                return 'Please enter a valid color keyword or hexadecimal code';
-            }
-
-            return true;
-        }
-    }
 ];
 
-function shapeChoice() {
-    switch (data.shape.toLowerCase()) {
-        case 'triangle':
-            return new Triangle(data.text, data.color, data.background);
-        
-        case 'circle':
-            return new Circle(data.text, data.color, data.background);
-
-        case 'square':
-            return new Square(data.text, data.color, data.background);
-
-        default:
-            console.log('Invalid selection, please try again');
-            return null;
-    }
-};
+exports.questions = questions;

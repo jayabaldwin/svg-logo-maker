@@ -1,25 +1,29 @@
 // Packages needed for this application
 const inquirer = require('inquirer');
-const jest = require('jest')
 const fs = require('fs');
-const shapes = require('./lib/shapes.js');
-const userInput = require('./lib/user-input.js');
-const writeFile = require('./lib/write-file.js');
 
+const { chosenShape, shapes } = require('./lib/shapes.js');
+const { questions } = require('./lib/user-input.js');
 
-
-// Initialize app
-function init() {
-    // prompt inquirer questions
-    inquirer.prompt(questions)
-        .then((answers) => {
-            // pass inquirer answers into write-file
-            let markdownContent = generateMarkdown(answers);
-            // pass markdown content to writeToFile
-            writeToFile('logo.svg', markdownContent);
-        })
-        .catch((err) => console.error(err));
+// Generate SVG Logo
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        err ? console.log(err) : console.log('Successfully generated logo.svg');
+    });
 }
 
-// Function call to initialize app
-init();
+// Function to initialize the app
+async function initializeApp() {
+    const userInput = await inquirer.prompt(questions);
+    const selectedShape = chosenShape(userInput.shape);
+    
+    if (selectedShape) {
+        const svgData = selectedShape.render(userInput.text, userInput.color, userInput.background);
+        writeToFile('logo.svg', svgData);
+    }
+}
+
+// Call the function to initialize the app
+initializeApp();
+
+
