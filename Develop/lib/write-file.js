@@ -9,6 +9,8 @@ class LogoGenerator {
             .then((data) => {
                 let result;
 
+                data.text = data.text.toUpperCase();
+
                 switch (data.shape) {
                     case 'Triangle':
                         result = new Triangle(data.text, data.color, data.background);
