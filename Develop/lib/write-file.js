@@ -1,6 +1,7 @@
-const fs = require("fs");
-const inquirer = require("inquirer");
-const { questions } = require("./user-input.js");
+const fs = require('fs');
+const path = require('path');
+const inquirer = require('inquirer');
+const { questions } = require('./user-input.js');
 const { Triangle, Circle, Square } = require('./shapes.js');
 
 class LogoGenerator {
@@ -8,6 +9,8 @@ class LogoGenerator {
         inquirer.prompt(questions)
             .then((data) => {
                 let result;
+
+                data.text = data.text.toUpperCase();
 
                 switch (data.shape) {
                     case 'Triangle':

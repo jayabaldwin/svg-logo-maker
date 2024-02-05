@@ -5,9 +5,15 @@
   ## Description
   This Node.js command-line application takes user input in order to generate a logo, which is then saved as an SVG file. 
   <br>
+  
   This project is centered around Object-Oriented Programming and further familiarisation with node.js and the dependencies Inquirer and Jest.
   <br>
-  Inquirer is utilised to prompt the user within the command line on their logo specification: a triangle, circle or square logo, the fill color and up to 3 characters for the text and on completion an SVG logo will be generated. Jest........ 
+
+  Inquirer is utilised to prompt the user within the command line on their logo specification: a triangle, circle or square logo, 3 characters of text and the background/text color. On completion the console will log the message "Generated logo.svg". The SVG logo is written through the inbuilt 'fs write file' method that is required in node and saved into the "examples" folder.
+  
+  Jest is a JavaScript testing framework. For each shape we were generating, a corresponding test was required. We had to apply the concept of test-driven development, which is a coding practice that essentially means, test first, code later. Thus, we had to pre-specify what result we were looking to output and (hopefully) the code will past the test and function the way it was envisioned. I personally found the testing aspect very tricky, especially getting my head around having to write a test with no code (??!!) but got there in the end and I can definitely see the advantages of Jest, however if you were to test every piece of code prior to writing it, it would be a very long and expensive journey.
+
+  As per usual, it was a big run around of trial and error only to come back to clean and simplistic looking code haha best way to learn though.
   
   ![Badge](https://img.shields.io/badge/License-MIT-yellow.svg)
  
@@ -68,7 +74,7 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
   ## Usage
   Run this application with the command:
-  `
+  ` node index.js
   `
 <!-- not sure what to put in here -->
   
