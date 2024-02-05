@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 // Generate SVG Logo
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
