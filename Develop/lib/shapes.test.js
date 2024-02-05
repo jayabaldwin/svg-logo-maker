@@ -1,7 +1,5 @@
 // Jest tests for shapes - Triangle, Circle, Square
-const Triangle = require("./shapes.js");
-const Circle = require("./shapes.js");
-const Square = require("./shapes.js");
+const { Triangle, Circle, Square } = require("./shapes.js");
 
 // Testing suites for all 3 shapes 
 describe('Shapes', () => {
@@ -26,7 +24,7 @@ describe('Shapes', () => {
                 'XYZ',
                 '#000000',
                 'green');
-            expect(circle.render()).toBe(`<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><polygon points="150, 18 244, 182 56, 182" fill="green"/><text y="150" x="150" alignment-baseline="middle" fill="#000000" text-anchor="middle" font-size="30">XYZ</text></svg>`
+            expect(circle.render()).toBe(`<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="150" r="50" fill="green"/><text y="150" x="150" alignment-baseline="middle" fill="#000000" text-anchor="middle" font-size="30">XYZ</text></svg>`
             );
         });
     });
@@ -39,7 +37,7 @@ describe('Shapes', () => {
                 'OK',
                 'blue',
                 'pink');
-            expect(square.render()).toBe(`<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><polygon points="150, 18 244, 182 56, 182" fill="pink"/><text y="150" x="150" alignment-baseline="middle" fill="blue" text-anchor="middle" font-size="30">OK</text></svg>`
+            expect(square.render()).toBe(`<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" height="200" width="300" fill="pink"/><text y="100" x="150" alignment-baseline="middle" fill="blue" text-anchor="middle" font-size="30">OK</text></svg>`
             );
         });
     });
